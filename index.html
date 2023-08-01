@@ -836,7 +836,7 @@
                 </section>
 
                 <section>
-                    <h4>If the input is text-based, we call it a <code>Prompt</code></h4>
+                    <h4>If the input is text-based, we call it a <u>Prompt</u></h4>
                     <figure>
                         <img src="images/prompt_engineering.png" width="70%" />
                         <figcaption>
@@ -845,6 +845,67 @@
                             </small>
                         </figcaption>
                     </figure>
+                </section>
+
+                <section>
+                    <h4>The Anatomy of a Prompt 💀</h4>
+                    <p>Prompts can be as simple as an instruction/question, <br>or as complex as huge chunks of text.</p>
+                    <p>You can <u>tell</u> it who to be (<code>role</code>), <br>
+                       what it needs to know (<code>context</code>) <br>
+                       what to do (<code>task</code>) and how (<code>instructions</code>), <br> 
+                       what it should avoid (<code>constraints</code>) <br> 
+                       or you can <u>show</u> it what to do and how (<code>examples</code>)</p>
+                    <p><strong>There are no rules!</strong></p>
+                </section>
+
+                <section>
+                    <h4>Role Prompting</h4>
+                    <p>Assign a role to the model <br>to provide some context</p>
+                    <figure>
+                        <img src="images/role_prompting.png" width="70%" />
+                        <figcaption>
+                            <small><b>Source:</b>
+                                <a href="https://learnprompting.org/docs/basics/roles">Learn Prompting</a>
+                            </small>
+                        </figcaption>
+                    </figure>
+                </section>
+
+                <section>
+                    <h4>Few-Shot Prompting</h4>
+                    <p>Show the model a few examples <br>of what you want it to do</p>
+                    <figure>
+                        <img src="images/few_shot_prompting.png" width="70%" />
+                        <figcaption>
+                            <small><b>Source:</b>
+                                <a href="https://learnprompting.org/docs/basics/few_shot">Learn Prompting</a>
+                            </small>
+                        </figcaption>
+                    </figure>
+                </section>
+
+                <section>
+                    <h4>Crafting Prompts: Design Principles</h4>
+                    <ol>
+                        <li>Clear and specific instructions</li>
+                        <li>Simple and clear wording</li>
+                        <li>Avoid complex sentence types</li>
+                        <li>Avoid ambiguity</li>
+                        <li>Use keywords</li>
+                        <li>Consider the audience</li>
+                        <li>Test and refine</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h4>Prompt Engineering 👩‍💻</h4>
+                    <p>Talking a model into doing <br>what you want it to do</p>
+                </section>
+
+                <section>
+                    <h4>Prompt Hacking 🐱‍💻</h4>
+                    <p>Talking a model into doing <br>something it's <u>not</u> supposed to <br>
+                    (either good or bad)</p>
                 </section>
 
                 <section>
@@ -1240,8 +1301,8 @@
                 </section>
 
                 <section>
-                    <h4>Prompt Hacking</h4>
-                    <p>Attack that exploits the vulnerabilities of LLMs, <br> by manipulating their inputs or prompts
+                    <h4>Prompt Attack</h4>
+                    <p>Attack that exploits the vulnerabilities of LLMs, <br> by manipulating their prompts
                     </p>
                     <figure>
                         <img src="images/learn_prompting.png" width="60%" />
