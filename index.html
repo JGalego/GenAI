@@ -971,11 +971,11 @@
                 <section>
                     <h4>Hallucinations 🍄</h4>
                     <figure>
-                        <img src="images/hallucination.png" width="40%" />
+                        <img src="images/fractal_hallucination.jpg" width="40%" />
                         <figcaption>
                             <small><b>Source:</b>
                                 <a
-                                    href="https://slator.com/why-large-language-models-hallucinate-when-machine-translating-in-wild/">Slator</a>
+                                    href="https://thenewstack.io/how-to-reduce-the-hallucinations-from-large-language-models/">TheNewStack</a>
                             </small>
                         </figcaption>
                     </figure>
@@ -1040,6 +1040,103 @@
                 </section>
 
                 <section>
+                    <h4>Why do these models hallucinate?</h4>
+                </section>
+
+                <section>
+                    <h4>LLMs as "compact" and "lossy" <br>representations of knowledge</h4>
+                    <figure>
+                        <img src="images/llm_compact_lossy_knowledge.png" width="70%" />
+                        <figcaption>
+                            <small><b>Source:</b> Adapted from
+                                <a href="https://newsletter.victordibia.com/p/practical-steps-to-reduce-hallucination">Designing with Machine Learning</a>
+                            </small>
+                        </figcaption>
+                    </figure>
+                </section>
+
+                <section>
+                    <h4>How can we prevent/reduce hallucinations?</h4>
+                </section>
+
+                <section>
+                    <h4>RL with Human Feedback (RLHF)</h4>
+                    <p>Human evaluators review the model's responses and pick the most <em>appropriate</em> for the users' prompts</p>
+                    <figure>
+                        <img src="images/hf_rlhf.png" width="40%" />
+                        <figcaption>
+                            <small><b>Source:</b>
+                                <a href="https://huggingface.co/blog/rlhf">🤗</a>
+                            </small>
+                        </figcaption>
+                    </figure>
+                </section>
+
+                <section>
+                    <h4>Early Detection</h4>
+                    <p>Identify hallucinated content and <br>use it during training</p>
+                    <figure>
+                        <img src="images/early_detection.png" width="70%" />
+                        <figcaption>
+                            <small><b>Source:</b>
+                                <a href="https://arxiv.org/abs/2011.02593">Zhou <em>et al.</em> (2021)</a>
+                            </small>
+                        </figcaption>
+                    </figure>
+                </section>
+
+                <section>
+                    <h4>Regularization</h4>
+                    <p>Often overlooked, these techniques <br>can help alleviate overfitting</p>
+                    <figure>
+                        <img src="images/dropout_llm.png" width="50%" />
+                        <figcaption>
+                            <small><b>Source:</b>
+                                <a href="https://arxiv.org/abs/2305.13230">Xue <em>et al.</em> (2023)</a>
+                            </small>
+                        </figcaption>
+                    </figure>
+                </section>
+
+                <section>
+                    <h4>Temperature Tuning 🌡️</h4>
+                    <p>Temperature regulates the randomness <br>or creativity of the responses</p>
+                    <small>$\uparrow T \Rightarrow \uparrow \texttt{Hallucinations}$</small>
+                    <figure>
+                        <img src="images/gpt3_temperature.png" width="70%" />
+                        <figcaption>
+                            <small><b>Source:</b>
+                                <a href="https://newsletter.victordibia.com/p/practical-steps-to-reduce-hallucination">Designing with Machine Learning</a>
+                            </small>
+                        </figcaption>
+                    </figure>
+                </section>
+
+                <section>
+                    <h4>Chain-of-Thought (CoT) Reasoning 🤔</h4>
+                    <p>Using CoT prompting we can improve a model's ability to perform complex reasoning</p>
+                    <figure>
+                        <img src="images/standard_vs_cot_prompting.png" width="70%" />
+                        <figcaption>
+                            <small><b>Source:</b>
+                                <a href="https://arxiv.org/abs/2201.11903">Wei <em>et al.</em> (2022)</a>
+                            </small>
+                        </figcaption>
+                    </figure>
+                </section>
+
+                <section>
+                    <h4>External Data Sources</h4>
+                    <p>Provide access to <em>relevant</em> data from a knowledge base</p>
+                    <p>Treat the task as a search problem <em>grounded</em> in data</p>
+                    <small>
+                        <p><a href="https://ai.facebook.com/blog/retrieval-augmented-generation-streamlining-the-creation-of-intelligent-natural-language-processing-models/">Retrieval Augmented Generation (RAG)</a></p>
+                        <p><a href="https://arxiv.org/abs/2004.04906">Dense Passage Retrieval</a></p>
+                        <p><a href="https://arxiv.org/abs/2212.10496">Hypothetical Document Embedding (HyDE)</a></p>
+                    </small>
+                </section>
+
+                <section>
                     <h4>Security 🛡️</h4>
                     <figure>
                         <img src="images/llm_indirect_prompt_injection.png" width="40%" />
@@ -1097,6 +1194,14 @@
                             </small>
                         </figcaption>
                     </figure>
+                </section>
+
+                <section>
+                    <h4>The open source community has played a key role in this dimension</h4>
+                </section>
+
+                <section>
+                    <h4>Let me tell you the story of LLaMA 🦙</h4>
                 </section>
 
                 <section>
