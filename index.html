@@ -3018,7 +3018,7 @@ if __name__ == '__main__':
         function collapseAll() {
             for (i = 0; i < refSections.length; i++) {
                 ul = document.getElementById(refSections[i]);
-                ul.content.display = 'none'
+                ul.style.display = 'none'
             }
         }
 
@@ -3091,12 +3091,9 @@ if __name__ == '__main__':
         function toggleContent(e) {
             e.classList.toggle("active");
             var content = e.nextElementSibling;
-            console.log(content.style.display)
             if (content.style.display === "block") {
-                console.log('Setting display to none')
                 content.style.display = "none";
             } else {
-                console.log('Setting display to block')
                 content.style.display = "block";
             }
         }
