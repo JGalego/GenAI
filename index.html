@@ -2999,8 +2999,8 @@ if __name__ == '__main__':
                 keyboard: false,
                 custom: [
                     {
-                        title: 'Blogs',
-                        icon: '<i class="fa fa-bookmark">',
+                        title: 'Links',
+                        icon: '<i class="fa fa-globe">',
                         src: 'links.html'
                     }
                 ]
@@ -3008,23 +3008,26 @@ if __name__ == '__main__':
         });
     </script>
     <script>
-        function searchBlogs() {
+        function searchRefs() {
             // Declare variables
             var input, filter, ul, li, a, i, txtValue;
-            input = document.getElementById('blog-search');
+            var refSections = ["architectures", "blogs"];
+            input = document.getElementById('ref-search');
             filter = input.value.toUpperCase();
-            ul = document.getElementById("blogs");
-            li = ul.getElementsByTagName('li');
-        
-            // Loop through all list items, and hide those who don't match the search query
-            console.log(li.length)
-            for (i = 0; i < li.length; i++) {
-                a = li[i].getElementsByTagName("a")[0];
-                txtValue = a.textContent || a.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    li[i].style.display = "";
-                } else {
-                    li[i].style.display = "none";
+            for (i = 0; i < refSections.length; i++) {
+                // Get list items per reference section
+                ul = document.getElementById(refSections[i]);
+                li = ul.getElementsByTagName('li');
+                
+                // Loop through all list items, and hide those who don't match the search query
+                for (j = 0; j < li.length; j++) {
+                    a = li[j].getElementsByTagName("a")[0];
+                    txtValue = a.textContent || a.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        li[j].style.display = "";
+                    } else {
+                        li[j].style.display = "none";
+                    }
                 }
             }
         }
