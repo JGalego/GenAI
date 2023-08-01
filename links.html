@@ -1,45 +1,15 @@
-<input type="text" id="ref-search" onkeyup="searchRefs()" placeholder="Search..."/>
-<h4>Architectures 🛠️🧭</h4>
-<ul class="slide-menu-items" id="architectures">
-    <!-- Guidance 🧭 -->
-    <li class="slide-menu-item">
-        <a href="https://aws.amazon.com/solutions/guidance/natural-language-queries-of-relational-databases-on-aws/">
-            Guidance for Natural Language Queries of Relational Databases on AWS
-        </a>
-    </li>
-    <li class="slide-menu-item">
-        <a href="https://aws-solutions-library-samples.github.io/app-development/developing-applications-using-generative-ai-with-amazon-codewhisperer.html">
-            Guidance for Developing Applications Using Generative AI with Amazon CodeWhisperer
-        </a>
-    </li>
-    <li class="slide-menu-item">
-        <a href="https://aws.amazon.com/solutions/guidance/generative-ai-deployments-using-amazon-sagemaker-jumpstart">
-            Guidance for Generative AI Deployments using Amazon SageMaker JumpStart
-        </a>
-    </li>
-    <li class="slide-menu-item">
-        <a href="https://aws.amazon.com/solutions/guidance/custom-search-of-an-enterprise-knowledge-base-on-aws">
-            Guidance for Custom Search of an Enterprise Knowledge Base on AWS
-        </a>
-    </li>
-    <!-- Whitepapers 📄 -->
-    <li class="slide-menu-item">
-        <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-caf-for-ai/aws-caf-for-ai.html">
-            AWS Cloud Adoption Framework for Artificial Intelligence, Machine Learning, and Generative AI
-        </a>
-    </li>
-    <li class="slide-menu-item">
-        <a href="https://pages.awscloud.com/GLOBAL-field-DL-Generative-AI-Foundation-2023-learn.html">
-            Explore how to get started with Generative AI on AWS
-        </a>
-    </li>
-    <!-- Ebooks 📚 -->
-    <li class="slide-menu-item">
-        <a href="https://pages.awscloud.com/NAMER-startup-DL-GenAI-eBook-2023-learn.html">
-            Generative AI for every startup
-        </a>
-    </li>
-    <!-- Articles 📝 -->
+<!-- 
+    Reference Search
+-->
+
+<input type="text" id="ref-search" onkeyup="searchRefs()" placeholder="Search..." style="margin-top: 10px"/>
+
+<!-- 
+    Articles 📝
+-->
+
+<button type="button" class="collapsible" onclick="toggleContent(this)">Articles 📝</button>
+<ul class="slide-menu-items" id="articles" style="display: none">
     <li class="slide-menu-item">
         <a href="https://www.allthingsdistributed.com/2023/04/demystifying-large-language-models-with-amazon-distinguished-scientists.html">
             Demystifying LLMs with Amazon distinguished scientists
@@ -56,8 +26,13 @@
         </a>
     </li>
 </ul>
-<h4>Blogs 📝</h4>
-<ul class="slide-menu-items" id="blogs">
+
+<!--
+    Blogs 📝
+-->
+
+<button type="button" class="collapsible" onclick="toggleContent(this)">Blogs 📝</button>
+<ul class="slide-menu-items" id="blogs" style="display: none">
     <!-- January 2022 -->
     <li class="slide-menu-item">
         <a href="https://aws.amazon.com/blogs/machine-learning/detect-nlp-data-drift-using-custom-amazon-sagemaker-model-monitor/">
@@ -554,4 +529,63 @@
         </a>
     </li>
     -->
+</ul>
+
+<!-- 
+    Ebooks 📚
+-->
+
+<button type="button" class="collapsible" onclick="toggleContent(this)">Ebooks 📚</button>
+<ul class="slide-menu-items" id="ebooks" style="display: none">
+    <li class="slide-menu-item">
+        <a href="https://pages.awscloud.com/NAMER-startup-DL-GenAI-eBook-2023-learn.html">
+            Generative AI for every startup
+        </a>
+    </li>
+</ul>
+
+<!-- 
+    Guides 🧭
+-->
+
+<button type="button" class="collapsible" onclick="toggleContent(this)">Guides 🧭</button>
+<ul class="slide-menu-items" id="guides" style="display: none">
+    <li class="slide-menu-item">
+        <a href="https://aws.amazon.com/solutions/guidance/natural-language-queries-of-relational-databases-on-aws/">
+            Guidance for Natural Language Queries of Relational Databases on AWS
+        </a>
+    </li>
+    <li class="slide-menu-item">
+        <a href="https://aws-solutions-library-samples.github.io/app-development/developing-applications-using-generative-ai-with-amazon-codewhisperer.html">
+            Guidance for Developing Applications Using Generative AI with Amazon CodeWhisperer
+        </a>
+    </li>
+    <li class="slide-menu-item">
+        <a href="https://aws.amazon.com/solutions/guidance/generative-ai-deployments-using-amazon-sagemaker-jumpstart">
+            Guidance for Generative AI Deployments using Amazon SageMaker JumpStart
+        </a>
+    </li>
+    <li class="slide-menu-item">
+        <a href="https://aws.amazon.com/solutions/guidance/custom-search-of-an-enterprise-knowledge-base-on-aws">
+            Guidance for Custom Search of an Enterprise Knowledge Base on AWS
+        </a>
+    </li>
+</ul>
+
+<!-- 
+    Whitepapers 📄
+-->
+
+<button type="button" class="collapsible" onclick="toggleContent(this)">Whitepapers 📄</button>
+<ul class="slide-menu-items" id="whitepapers" style="display: none">
+    <li class="slide-menu-item">
+        <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-caf-for-ai/aws-caf-for-ai.html">
+            AWS Cloud Adoption Framework for Artificial Intelligence, Machine Learning, and Generative AI
+        </a>
+    </li>
+    <li class="slide-menu-item">
+        <a href="https://pages.awscloud.com/GLOBAL-field-DL-Generative-AI-Foundation-2023-learn.html">
+            Explore how to get started with Generative AI on AWS
+        </a>
+    </li>
 </ul>

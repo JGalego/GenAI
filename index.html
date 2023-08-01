@@ -3007,28 +3007,97 @@ if __name__ == '__main__':
             }
         });
     </script>
+
+    <!-- 
+        References 
+    -->
+
     <script>
+        var refSections = ["articles", "blogs", "ebooks", "guides", "whitepapers"];
+
+        function collapseAll() {
+            for (i = 0; i < refSections.length; i++) {
+                ul = document.getElementById(refSections[i]);
+                ul.content.display = 'none'
+            }
+        }
+
         function searchRefs() {
-            // Declare variables
             var input, filter, ul, li, a, i, txtValue;
-            var refSections = ["architectures", "blogs"];
+
+            // Get search query
             input = document.getElementById('ref-search');
             filter = input.value.toUpperCase();
+            
+            // Ignore and collapse reference sections if search query is empty
+            if (!filter) {
+                collapseAll();
+                return;
+            }
+
             for (i = 0; i < refSections.length; i++) {
                 // Get list items per reference section
                 ul = document.getElementById(refSections[i]);
                 li = ul.getElementsByTagName('li');
                 
                 // Loop through all list items, and hide those who don't match the search query
+                foundMatches = false;
                 for (j = 0; j < li.length; j++) {
                     a = li[j].getElementsByTagName("a")[0];
                     txtValue = a.textContent || a.innerText;
                     if (txtValue.toUpperCase().indexOf(filter) > -1) {
                         li[j].style.display = "";
+                        foundMatches = true
                     } else {
                         li[j].style.display = "none";
                     }
                 }
+
+                // Display section if any matches are found
+                if (foundMatches) ul.style.display = 'block';
+            }
+        }
+    </script>
+
+    <!-- Handle collapsible References sections -->
+
+    <style>
+        .collapsible {
+            background-color: #777;
+            color: white;
+            cursor: pointer;
+            /* padding: 25px; */
+            margin-top: 10px;
+            width: 100%;
+            border: 10px;
+            text-align: center;
+            outline: none;
+            font-size: 15px;
+        }
+        
+        .active, .collapsible:hover {
+            background-color: #555;
+        }
+        
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+    </style>
+
+    <script>
+        function toggleContent(e) {
+            e.classList.toggle("active");
+            var content = e.nextElementSibling;
+            console.log(content.style.display)
+            if (content.style.display === "block") {
+                console.log('Setting display to none')
+                content.style.display = "none";
+            } else {
+                console.log('Setting display to block')
+                content.style.display = "block";
             }
         }
     </script>
