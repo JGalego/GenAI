@@ -12,6 +12,9 @@
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+        <!-- Custom controls -->
+        <link rel="stylesheet" href="plugin/customcontrols/customcontrols.css">
 	</head>
 	<body>
 		<div class="reveal">
@@ -2000,6 +2003,7 @@
 		<script src="plugin/highlight/highlight.js"></script>
         <script src="plugin/math/math.js"></script>  <!-- https://revealjs.com/math/ -->
         <script src="plugin/menu/menu.js"></script>  <!-- https://github.com/denehyg/reveal.js-menu -->
+        <script src="plugin/customcontrols/customcontrols.js"></script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
@@ -2008,7 +2012,18 @@
 				hash: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX, RevealMenu ]
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX, RevealMenu, RevealCustomControls ],
+
+                customcontrols: {
+					controls: [
+      					{
+						    id: 'toggle-overview',
+						    title: 'Toggle overview (O)',
+						    icon: '<i class="fa fa-th"></i>',
+						    action: 'Reveal.toggleOverview();'
+						}
+                    ]
+                }
 			});
 		</script>
 	</body>
