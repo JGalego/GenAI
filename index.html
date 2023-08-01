@@ -662,18 +662,18 @@
                 </section>
 
                 <section>
+                    <h4>... and we're back!</h4>
                     <img src="images/all_caught_up.gif" width="70%" />
                 </section>
 
                 <section>
-                    <h3>So, where are we now?</h3>
-
+                    <h4>So, where are we now...</h4>
+                    <p>and what's coming next?</p>
                 </section>
 
                 <section>
-                    <h3>GenAI is the fastest growing trend in AI</h3>
+                    <h4>GenAI is the fastest growing trend in AI</h4>
                     <p>📈</p>
-
                 </section>
 
                 <section>
@@ -737,7 +737,7 @@
                 </section>
 
                 <section>
-                    <h3>Let's break it down…</h3>
+                    <h4>Let's break it down…</h4>
                     <img src="images/bender_reading.gif" width="30%" />
                 </section>
 
@@ -813,8 +813,8 @@
                 </section>
 
                 <section>
-                    <p>LLMs are really just a <a href="https://hai.stanford.edu/news/reflections-foundation-models">proper
-                            subset</a> of FMs</p>
+                    <h4>LLMs are really just a <a href="https://hai.stanford.edu/news/reflections-foundation-models">proper
+                            subset</a> of FMs</h4>
                     <figure>
                         <img src="images/fm_venn.png" width="70%" />
                     </figure>
@@ -851,15 +851,14 @@
                         <p>Chat (Virtual Assistant) 💁</p>
                         <p>Summarization (Text Extraction) 📖</p>
                         <p>Search 🔎</p>
-                        <p>Code generation 👨‍💻</p>
-                        <p>Music creation 🎶</p>
+                        <p>Code Generation 👨‍💻</p>
+                        <p>Music Creation 🎶</p>
                         <p>Video Editing 🎥</p>
                     </small>
                 </section>
 
                 <section>
                     <h4>GenAI is rapidly transforming AI</h4>
-                    <!--img src="https://media.tenor.com/2B3a8aPNwo8AAAAd/borboleta.gif" width="30%" /-->
                     <figure>
                         <video controls muted width="20%">
                             <source src="images/human_stable_evolution.mp4" type="video/mp4">
@@ -950,7 +949,7 @@
                 </section>
 
                 <section>
-                    <h3>GenAI is taking over the world</h3>
+                    <h4>GenAI is taking over the world</h4>
                     <figure>
                         <img src="https://www.sequoiacap.com/wp-content/uploads/sites/6/2022/09/sonya_cute_robots_singing_music_fantasy_cityscape_with_flowers__508554ad-db40-421d-87b6-4a188604f226.png"
                             width="20%" />
@@ -1584,7 +1583,7 @@
                 </section>
 
                 <section>
-                    <h3>Is there a better way?</h3>
+                    <h4>Is there a better way?</h4>
                     <img src="images/better_way.gif" width="30%"/>
                 </section>
 
@@ -1605,7 +1604,7 @@
 
                 <section>
                     <small>
-                        <h3>Step-by-Step Guide</h3>
+                        <h4>Step-by-Step Guide</h4>
                         <ol>
                             <li>
                                 <p><strong>Prepare Data</strong></p>
@@ -1614,7 +1613,6 @@
                                     </li>
                                     <li>Download <code>LAION-5B</code> images and text pairs</li>
                                     <li>Create <a href="https://aws.amazon.com/fsx/lustre/">FSx for Lustre</a> volume from S3 path</li>
-                                    <li>Build <a href="JSON Lines index</li>
                                     <li>Build <a href="https://jsonlines.org/">JSON Lines</a> index</li>
                                 </ul>
                             </li>
@@ -1637,11 +1635,37 @@
                                 <ul>
                                     <li>Run inference using <a
                                             href="https://docs.aws.amazon.com/sagemaker/latest/dg/deploy-model.html">SageMaker
-                                            Hosting</a></li>
+                                            Hosting</a> and evaluate results</li>
                                 </ul>
                             </li>
                         </ol>
                     </small>
+                </section>
+
+                <section>
+                    <h4>Amazon SageMaker Studio</h4>
+                    <figure>
+                        <img src="images/sm_studio_home.png" width="70%" />
+                        <figcaption>
+                            <small><b>Source:</b>
+                                <a
+                                    href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-ui.html">Amazon SageMaker Developer Guide</a>
+                            </small>
+                        </figcaption>
+                    </figure>
+                </section>
+
+                <section>
+                    <h4>Amazon SageMaker Notebook Instance</h4>
+                    <figure>
+                        <img src="images/sm_notebook_instance.png" width="70%" />
+                        <figcaption>
+                            <small><b>Source:</b> Adapted from
+                                <a
+                                    href="https://www.sqlshack.com/how-to-create-an-aws-sagemaker-instance/">SQLShack</a>
+                            </small>
+                        </figcaption>
+                    </figure>
                 </section>
 
                 <section>
@@ -1667,6 +1691,19 @@
                 </section>
 
                 <section>
+                    <h4><a href="https://github.com/jupyterlab/jupyter-ai">Jupyter AI</a>: Bring GenAI to Jupyter
+                        Notebooks</h4>
+                    <figure>
+                        <img src="images/jupyter_ai.png" width="80%" />
+                        <figcaption>
+                            <small><b>Source:</b> Adapted from
+                                <a href="https://github.com/jupyterlab/jupyter-ai">GitHub</a>
+                            </small>
+                        </figcaption>
+                    </figure>
+                </section>
+
+                <section>
                     <h4>#2 <a href="https://aws.amazon.com/sagemaker/jumpstart/getting-started/">Use a pre-trained FM
                             <br> from Amazon SageMaker JumpStart</a></h4>
                     <figure>
@@ -1680,12 +1717,26 @@
                 </section>
 
                 <section>
-                    <h4>Models on JumpStart can be accessed in 3 ways</h4>
+                    <h4>Models on Amazon SageMaker JumpStart can be accessed in 3 ways</h4>
                     <figure>
                         <img src="images/smj_how_to.png" width="90%" />
                         <figcaption>
                             <small><b>Source:</b> Adapted from
                                 <a href="https://aws.amazon.com/sagemaker/jumpstart">AWS</a>
+                            </small>
+                        </figcaption>
+                    </figure>
+                </section>
+
+                <section>
+                    <h4>Fine-tune Stable Diffusion <br>with Amazon SageMaker JumpStart</h4>
+                    <figure>
+                        <video controls muted width="70%">
+                            <source src="images/sd_txt2_img_finetuning.mp4" type="video/mp4">
+                        </video>
+                        <figcaption>
+                            <small><b>Source:</b>
+                                <a href="https://aws.amazon.com/blogs/machine-learning/fine-tune-text-to-image-stable-diffusion-models-with-amazon-sagemaker-jumpstart/">AWS ML Blog</a>
                             </small>
                         </figcaption>
                     </figure>
@@ -1710,19 +1761,6 @@
                             <p>Fully integrated with Amazon SageMaker</p>
                         </li>
                     </ul>
-                </section>
-
-                <section>
-                    <h4><a href="https://github.com/jupyterlab/jupyter-ai">Jupyter AI</a>: Bring GenAI to Jupyter
-                        Notebooks</h4>
-                    <figure>
-                        <img src="images/jupyter_ai.png" width="80%" />
-                        <figcaption>
-                            <small><b>Source:</b> Adapted from
-                                <a href="https://github.com/jupyterlab/jupyter-ai">GitHub</a>
-                            </small>
-                        </figcaption>
-                    </figure>
                 </section>
 
                 <section>
@@ -1898,7 +1936,7 @@
                 </section>
 
                 <section>
-                    <h3>Ready to learn how?</h3>
+                    <h4>Ready to learn how?</h4>
                     <figure>
                         <img src="images/ready.gif" width="30%" />
                     </figure>
@@ -2121,8 +2159,8 @@
                 </section>
 
                 <section>
-                    <h3>How can we have a <br> <a
-                            href="https://aws.amazon.com/what-is/vector-databases/">vector database on AWS</a>?</h3>
+                    <h4>How can we provision a <br> <a
+                            href="https://aws.amazon.com/what-is/vector-databases/">vector database on AWS</a>?</h4>
                 </section>
 
                 <section>
@@ -2224,7 +2262,7 @@
                 </section>
 
                 <section>
-                    <h3>What if I want to explore <br> more use cases?</h3>
+                    <h4>What if I want to explore <br> more use cases?</h4>
                     <figure>
                         <img src="images/explore.gif" width="30%" />
                     </figure>
