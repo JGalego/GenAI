@@ -60,6 +60,13 @@
                 </section>
 
                 <section>
+                    <h4>Feel free to search around 🔎</h4>
+                    <figure>
+                        <img src="images/ctrl+shift+f.png" width="50%"/>
+                    </figure>
+                </section>
+
+                <section>
                     <h4>Note on implementation 👨‍💻</h4>
                     <p>The slides were created using <code><a href="https://revealjs.com/">reveal.js</a></code></p>
                     <p>and the presentation is hosted on <a href="https://danielabaron.me/blog/build-and-publish-presentation-with-html-and-css/">GitHub Pages</a></p>
@@ -2410,36 +2417,36 @@
                 </section>
 
                 <section>
-                    <h4>How can we provision a <br> <a
+                    <h4>How can we run a <br> <a
                             href="https://aws.amazon.com/what-is/vector-databases/">vector database on AWS</a>?</h4>
                 </section>
 
                 <section>
-                    <h4>#1 <a
-                            href="https://aws.amazon.com/blogs/database/building-ai-powered-search-in-postgresql-using-amazon-sagemaker-and-pgvector/">RDS
+                    <h4>#1a <a
+                            href="https://aws.amazon.com/about-aws/whats-new/2023/05/amazon-rds-postgresql-pgvector-ml-model-integration/">RDS
                             for PgSQL + <code>pgvector</code> extension</a></h4>
                     <pre><code class="language-sql">CREATE TABLE test_embeddings(product_id bigint, embeddings vector(3) );
         
-        INSERT INTO test_embeddings VALUES
-        (1, '[1, 2, 3]'), (2, '[2, 3, 4]'), (3, '[7, 6, 8]'), (4, '[8, 6, 9]');
-        
-        SELECT product_id, embeddings, embeddings &lt;-&gt; '[3,1,2]' AS distance
-        FROM test_embeddings 
-        ORDER BY embeddings &lt;-&gt; '[3,1,2]';
-        
-        /*
-         product_id | embeddings |     distance
-        ------------+------------+-------------------
-                  1 | [1,2,3]    | 2.449489742783178
-                  2 | [2,3,4]    |                 3
-                  3 | [7,6,8]    | 8.774964387392123
-                  4 | [8,6,9]    |   9.9498743710662
-        */
+INSERT INTO test_embeddings VALUES
+(1, '[1, 2, 3]'), (2, '[2, 3, 4]'), (3, '[7, 6, 8]'), (4, '[8, 6, 9]');
+
+SELECT product_id, embeddings, embeddings &lt;-&gt; '[3,1,2]' AS distance
+FROM test_embeddings 
+ORDER BY embeddings &lt;-&gt; '[3,1,2]';
+
+/*
+    product_id | embeddings |     distance
+------------+------------+-------------------
+            1 | [1,2,3]    | 2.449489742783178
+            2 | [2,3,4]    |                 3
+            3 | [7,6,8]    | 8.774964387392123
+            4 | [8,6,9]    |   9.9498743710662
+*/
         </code></pre>
                 </section>
 
                 <section>
-                    <h4><a
+                    <h4>Use Case: <a
                             href="https://aws.amazon.com/blogs/database/building-ai-powered-search-in-postgresql-using-amazon-sagemaker-and-pgvector/">Using
                             a similarity search for enhancing <br> product catalog search in an online retail store</a>
                     </h4>
@@ -2456,7 +2463,167 @@
                 </section>
 
                 <section>
+                    <h4>#1b <a href="https://aws.amazon.com/about-aws/whats-new/2023/07/amazon-aurora-postgresql-pgvector-vector-storage-similarity-search/">Aurora PgSQL + <code>pgvector</code> extension</a></h4>
+                    <!-- source: https://github.com/aws-samples/aurora-postgresql-pgvector/tree/main/apgpgvector-streamlit -->
+                    <pre><code class="language-python"># Adapted from
+# https://github.com/aws-samples/aurora-postgresql-pgvector/tree/main/apgpgvector-streamlit
+import streamlit as st
+from dotenv import load_dotenv
+from PyPDF2 import PdfReader
+from langchain.embeddings import HuggingFaceInstructEmbeddings
+from langchain.llms import HuggingFaceHub
+from langchain.vectorstores.pgvector import PGVector
+from langchain.memory import ConversationBufferMemory
+from langchain.chains import ConversationalRetrievalChain
+from htmlTemplates import css, bot_template, user_template
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+import os
+
+# Load PDFs and split them into chunks
+def get_pdf_text(pdf_docs):
+    text = ""
+    for pdf in pdf_docs:
+        pdf_reader = PdfReader(pdf)
+        for page in pdf_reader.pages:
+            text += page.extract_text()
+    return text
+
+def get_text_chunks(text):
+    text_splitter = RecursiveCharacterTextSplitter(
+        separators=["\n\n", "\n", ".", "!", "?", ",", " ", ""],
+        chunk_size=1000,
+        chunk_overlap=200,
+        length_function=len
+        )
+
+    chunks = text_splitter.split_text(text)
+    return chunks
+
+
+# Load the embeddings into Aurora PostgreSQL DB cluster
+CONNECTION_STRING = PGVector.connection_string_from_db_params(                                                  
+    driver = os.environ.get("PGVECTOR_DRIVER"),
+    user = os.environ.get("PGVECTOR_USER"),                                      
+    password = os.environ.get("PGVECTOR_PASSWORD"),                                  
+    host = os.environ.get("PGVECTOR_HOST"),                                            
+    port = os.environ.get("PGVECTOR_PORT"),                                          
+    database = os.environ.get("PGVECTOR_DATABASE")                                       
+)       
+
+def get_vectorstore(text_chunks):
+    embeddings = HuggingFaceInstructEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
+    vectorstore = PGVector.from_texts(texts=text_chunks, embedding=embeddings,connection_string=CONNECTION_STRING)
+    return vectorstore
+
+
+# Load the LLM and start a conversation chain
+def get_conversation_chain(vectorstore):
+    llm = HuggingFaceHub(repo_id="google/flan-t5-xxl", model_kwargs={"temperature":0.5, "max_length":1024})
+
+    memory = ConversationBufferMemory(
+        memory_key='chat_history', return_messages=True)
+    conversation_chain = ConversationalRetrievalChain.from_llm(
+        llm=llm,
+        retriever=vectorstore.as_retriever(),
+        memory=memory
+    )
+    return conversation_chain
+
+
+# Handle user input and perform Q&A
+def handle_userinput(user_question):
+    response = st.session_state.conversation({'question': user_question})
+    st.session_state.chat_history = response['chat_history']
+
+    for i, message in enumerate(st.session_state.chat_history):
+        if i % 2 == 0:
+            st.write(user_template.replace(
+                "{{MSG}}", message.content), unsafe_allow_html=True)
+        else:
+            st.write(bot_template.replace(
+                "{{MSG}}", message.content), unsafe_allow_html=True)
+
+
+# Create Streamlit app
+def main():
+    load_dotenv()
+    st.set_page_config(page_title="Streamlit Question Answering App",
+                        page_icon=":books::parrot:")
+    st.write(css, unsafe_allow_html=True)
+
+    st.sidebar.markdown(
+    """
+    ### Instructions:
+    1. Browse and upload PDF files
+    2. Click Process
+    3. Type your question in the search bar to get more insights
+    """
+)
+
+    if "conversation" not in st.session_state:
+        st.session_state.conversation = None
+    if "chat_history" not in st.session_state:
+        st.session_state.chat_history = None
+
+    st.header("GenAI Q&A with pgvector and Amazon Aurora PostgreSQL :books::parrot:")
+    user_question = st.text_input("Ask a question about your documents:")
+    if user_question:
+        handle_userinput(user_question)
+
+    with st.sidebar:
+        st.subheader("Your documents")
+        pdf_docs = st.file_uploader(
+            "Upload your PDFs here and click on 'Process'", accept_multiple_files=True)
+        if st.button("Process"):
+            with st.spinner("Processing"):
+                # get pdf text
+                raw_text = get_pdf_text(pdf_docs)
+
+                # get the text chunks
+                text_chunks = get_text_chunks(raw_text)
+
+                # create vector store
+                vectorstore = get_vectorstore(text_chunks)
+
+                # create conversation chain
+                st.session_state.conversation = get_conversation_chain(
+                    vectorstore)
+
+if __name__ == '__main__':
+    main()
+        </code></pre>
+                </section>
+
+                <section>
+                    <h4>Use Case: <a href="https://aws.amazon.com/blogs/database/leverage-pgvector-and-amazon-aurora-postgresql-for-natural-language-processing-chatbots-and-sentiment-analysis/">AI-powered Chatbot</a></h4>
+                    <figure>
+                        <img src="images/aurora_pgvector_langchain.png" width="80%" />
+                        <figcaption>
+                            <small><b>Source:</b>
+                                <a
+                                    href="https://aws.amazon.com/blogs/database/leverage-pgvector-and-amazon-aurora-postgresql-for-natural-language-processing-chatbots-and-sentiment-analysis/">AWS
+                                    ML Blog</a>
+                            </small>
+                        </figcaption>
+                    </figure>
+                </section>
+
+                <section>
                     <h4>#2 <a href="https://opensearch.org/platform/search/vector-database.html">OpenSearch</a></h4>
+                    <figure>
+                        <img src="images/hnsw_algo.jpg" width="40%" title="The Hierarchical Navigable Small Worlds algorithm (HNSW) is one of the most popular algorithms out there for Approximate Nearest Neighbor (ANN) search."/>
+                        <figcaption>
+                            <small><b>Source:</b>
+                                <a
+                                    href="https://aws.amazon.com/blogs/big-data/choose-the-k-nn-algorithm-for-your-billion-scale-use-case-with-opensearch/">AWS
+                                    Big Data Blog</a>
+                            </small>
+                        </figcaption>
+                    </figure>
+                </section>
+
+                <section>
+                    <h4>Use Case: <a href="https://opensearch.org/platform/search/vector-database.html">Amazon Music</a></h4>
                     <figure>
                         <img src="images/amazon_music_embeddings.png" width="50%" />
                         <figcaption>
@@ -2474,34 +2641,59 @@
                             href="https://medium.com/swlh/add-similarity-search-to-dynamodb-with-faiss-c68eb6a48b08">DynamoDB
                             + FAISS</a></h4>
                     <pre><code class="language-python">def save_faiss_model(self, text_list, id_list):
-            # Convert abstracts to vectors
-            embeddings = model.encode(text_list, show_progress_bar=False)
-            # Step 1: Change data type
-            embeddings32 = np.array(
-                [embedding for embedding in embeddings]).astype(&quot;float32&quot;)
-            # Step 4: Add vectors and their IDs
-            index_start_id = self.index.ntotal # inclusive
-            self.index.add(embeddings32)
-            index_end_id = self.index.ntotal # exclsuive
-            # serialize index
-            Path(f&quot;{FAISS_DIR}/{self.content_group}&quot;).mkdir(parents=True, exist_ok=True)
-            faiss.write_index(self.index, f&quot;{FAISS_DIR}/{self.content_group}/{self.content_group}_faiss_index.bin&quot;)
-            return (embeddings32, range(index_start_id, index_end_id))
+    # Convert abstracts to vectors
+    embeddings = model.encode(text_list, show_progress_bar=False)
+    # Step 1: Change data type
+    embeddings32 = np.array(
+        [embedding for embedding in embeddings]).astype(&quot;float32&quot;)
+    # Step 4: Add vectors and their IDs
+    index_start_id = self.index.ntotal # inclusive
+    self.index.add(embeddings32)
+    index_end_id = self.index.ntotal # exclsuive
+    # serialize index
+    Path(f&quot;{FAISS_DIR}/{self.content_group}&quot;).mkdir(parents=True, exist_ok=True)
+    faiss.write_index(self.index, f&quot;{FAISS_DIR}/{self.content_group}/{self.content_group}_faiss_index.bin&quot;)
+    return (embeddings32, range(index_start_id, index_end_id))
         </code></pre>
                 </section>
 
                 <section>
                     <h4>#4 <a
-                            href="https://medium.com/swlh/add-similarity-search-to-dynamodb-with-faiss-c68eb6a48b08">AWS Marketplace</a> solution</h4>
+                            href="https://aws.amazon.com/marketplace/search/results?searchTerms=vector+database">AWS Marketplace</a> Solution</h4>
                     <figure>
                         <img src="images/aws_marketplace_vector_databases.png" width="70%"/>
                     </figure>
                 </section>
 
                 <section>
+                    <h4>#5 Other Solutions</h4>
+                    <figure>
+                        <img src="images/vector_database_landscape.png" width="80%" />
+                        <figcaption>
+                            <small><b>Source:</b>
+                                <a
+                                    href="https://medium.com/data-engineer-things/why-you-shouldnt-invest-in-vector-databases-c0cd3f59d23c">Medium</a>
+                            </small>
+                        </figcaption>
+                    </figure>
+                </section>
+
+                <section>
+                    <h4>GenAI applications can be very powerful, <br>but also very vulnerable.</h4>
+                    <figure>
+                        <img src="images/vulnerable.gif" width="40%" />
+                    </figure>
+                </section>
+
+                <section>
+                    <h4>How can we protect users <br>against manipulation and abuse </h4>
+                    while creating a safe and positive experience?
+                </section>
+
+                <section>
                     <h4><a href="https://aws.amazon.com/blogs/machine-learning/safe-image-generation-and-diffusion-models-with-amazon-ai-content-moderation-services/">GenAI meets Amazon AI content moderation services</a></h4>
                     <figure>
-                        <img src="images/genai_content_moderation.png" width="50%" />
+                        <img src="images/genai_content_moderation.png" width="70%" />
                         <figcaption>
                             <small><b>Source:</b>
                                 <a
