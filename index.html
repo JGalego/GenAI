@@ -3017,7 +3017,12 @@ if __name__ == '__main__':
         // - https://revealjs.com/initialization/
         // - https://revealjs.com/config/
         Reveal.initialize({
+            // Add the current slide number to the URL hash so that reloading the
+            // page/copying the URL will return you to the same slide
             hash: true,
+
+            // Prints each fragment on a separate slide
+            pdfSeparateFragments: false,
 
             // Learn about plugins: https://revealjs.com/plugins/
             plugins: [
