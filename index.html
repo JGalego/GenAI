@@ -22,7 +22,6 @@
     <div class="reveal">
         <div class="slides">
             <section>
-
                 <!--
                     Lowercase in headings
                     https://github.com/hakimel/reveal.js/issues/2226
@@ -36,10 +35,10 @@
                         text-transform: none;
                     }
                 </style>
-                <h2>A Tour of GenAI 🚀</h2>
+                <h2>A Tour of GenAI <div display="inline" title="To infinity and beyond!">🚀</div></h2>
                 <p>There and back again...</p>
                 <small>
-                    <p><a href="https://jgalego.github.io">João Galego</a> $$\left|\text{🧠}\right&gt;$$</p>
+                    <p><a href="https://jgalego.github.io">João Galego</a> <div title="Hey there, I'm a brain in a ket!">$$\left|\text{🧠}\right&gt;$$</div></p>
                 </small>
             </section>
 
@@ -47,23 +46,23 @@
                 <section>
                     <h2>Contents 📓</h2>
                     <ol>
-                        <li>GenAI in a nutshell</li>
+                        <li>GenAI in a nutshell 🌰</li>
                         <li>Building GenAI on AWS</li>
                         <li>GenAI in practice</li>
                         <li>References</li>
                     </ol>
-
                 </section>
 
                 <section>
                     <h4>⚠️ Warning</h4>
                     <p>This presentation is a work in progress…</p>
                     <p class="fragment fade-in">and always will be</p>
-
                 </section>
 
-
             </section>
+
+            <!-- GenAI in a nutshell -->
+
             <section>
                 <section>
                     <h2>GenAI in a nutshell</h2>
@@ -138,9 +137,10 @@
                 </section>
                 <section>
                     <h4>Can you spot the differences?</h4>
+                    👀
                 </section>
                 <section>
-                    <h4>Let’s back up a little…</h4>
+                    <h4>Let's back up a little…</h4>
                     <!-- source: https://media4.giphy.com/media/v4hXkjXZAuMW5VfReA/200w.gif?cid=6c09b952gm9ybgn3i3bsldz6808lfnxox3vb1u4wib4zy1xe&ep=v1_gifs_search&rid=200w.gif&ct=g -->
                     <img src="images/rewind.gif" />
                 </section>
@@ -319,8 +319,10 @@
                 </section>
 
                 <section>
-                    <h4>Let’s focus on the ‘generative’ part</h4>
-
+                    <h4>Let's focus on the 'generative' part</h4>
+                    <figure>
+                        <img src="images/focus.gif" width="30%" />
+                    </figure>
                 </section>
 
                 <section>
@@ -350,7 +352,7 @@
                 </section>
 
                 <section>
-                    <h4>Example: Van Gogh or not Van Gogh?</h4>
+                    <h4>Example: Van Gogh or not Van Gogh? 👂🏻</h4>
                     <figure>
                         <img src="images/discriminative_modeling_example.png" width="60%" />
                         <figcaption>
@@ -400,7 +402,7 @@
         **Generative model:**   $p(x, y)$ or $p(x)$
         
         -->
-                    <h4>We can connect the two using <a href="https://plato.stanford.edu/entries/bayes-theorem/">Bayes’
+                    <h4>We can connect the two using <a href="https://plato.stanford.edu/entries/bayes-theorem/">Bayes'
                             Rule</a></h4>
                     <figure>
                         <img src="images/bayes_theorem.png" width="80%" />
@@ -488,7 +490,7 @@
                 </section>
 
                 <section>
-                    <h4>Diffusion models are trained <br> to <em>denoise</em> noisy images</h4>
+                    <h4>Diffusion models are trained to <em>denoise</em> noisy images</h4>
                     <figure>
                         <img src="https://i.imgur.com/dipPOfa.gif" width="70%" />
                         <figcaption>
@@ -552,11 +554,9 @@
 
                 <section>
                     <h4>AI-generated paintings as digital art</h4>
-                    <small>
-                        Théâtre d’Ópera Spatial (Midjourney + Gigapixel AI)
-                    </small>
+                    <p><em>Théâtre d'Ópera Spatial</em> (Midjourney + Gigapixel AI)</p>
                     <figure>
-                        <img src="images/theatre_dopera_spatial.png" width="70%" />
+                        <img src="images/theatre_dopera_spatial.png" width="60%" />
                         <figcaption>
                             <small><b>Source:</b>
                                 <a
@@ -618,7 +618,7 @@
                     <h4>January 2022: InstructGPT</h4>
                     <p>Learning to follow instructions <br> from human preferences</p>
                     <figure>
-                        <img src="images/instructgpt_steps.png" width="70%" />
+                        <img src="images/instructgpt_steps.png" width="60%" />
                         <figcaption>
                             <small><b>Source:</b>
                                 <a href="https://arxiv.org/abs/1503.03585">Ouyang <em>et al.</em> (2022)</a>
@@ -655,7 +655,7 @@
                 </section>
 
                 <section>
-                    <h4>The “Cambrian Explosion” of GenAI</h4>
+                    <h4>The "Cambrian Explosion" of GenAI</h4>
                     <figure>
                         <img src="images/tree_of_llife.gif" width="60%" />
                         <figcaption>
@@ -671,7 +671,7 @@
                     <p><a href="https://github.com/CompVis/stable-diffusion">Stable Diffusion</a> accumulated
                         <code>40k</code> stars <br>on GitHub in its first <code>90</code> days</p>
                     <figure>
-                        <img src="images/sd_github_stars.jpg" width="60%" />
+                        <img src="images/sd_github_stars.jpg" width="50%" />
                         <figcaption>
                             <small><b>Source:</b>
                                 <a href="https://twitter.com/JackSoslow/status/1582384758142672897/photo/1">Twitter</a>
@@ -685,7 +685,7 @@
                     <p><a href="https://chat.openai.com/chat">ChatGPT</a> reached the <code>1M</code> users mark <br> in
                         just <code>5</code> days</p>
                     <figure>
-                        <img src="images/chatgpt_consumer_adoption.png" width="60%" />
+                        <img src="images/chatgpt_consumer_adoption.png" width="50%" />
                         <figcaption>
                             <small><b>Source:</b> Adapted from
                                 <a
@@ -715,14 +715,14 @@
                 </section>
 
                 <section>
-                    <h3>Let’s break it down…</h3>
+                    <h3>Let's break it down…</h3>
                     <img src="images/bender_reading.gif" width="30%" />
                 </section>
 
                 <section>
                     <p># 1</p>
-                    <h4>GenAI can <strong>generate new content</strong> <br>similar to that of a human</h4>
-
+                    <h4>GenAI can generate new content</h4>
+                    <p>similar to what of a human would produce</p>
                 </section>
 
                 <section>
@@ -739,31 +739,26 @@
                 </section>
 
                 <section>
-                    <h4>If you answered <code>A</code>, you’re in big trouble…</h4>
+                    <h4>If you answered <code>A</code>, you're in big trouble…</h4>
                     <p class="fragment fade-in">or was it the other way around? 🤔</p>
-
                 </section>
 
                 <section>
                     <p># 2</p>
                     <h4>GenAI is powered by <strong>Foundation Models</strong></h4>
                     <p>or FMs for short</p>
-
                 </section>
 
                 <section>
                     <h4>These are really large models…</h4>
-
                 </section>
 
                 <section>
                     <h4>trained on massive amounts of unlabeled data…</h4>
-
                 </section>
 
                 <section>
-                    <h4>that can be adapted to <br> a wide range of downstream tasks</h4>
-
+                    <h4>that can be adapted to a wide range of tasks</h4>
                 </section>
 
                 <section>
@@ -796,7 +791,7 @@
                 </section>
 
                 <section>
-                    <p>LLMs are a <a href="https://hai.stanford.edu/news/reflections-foundation-models">proper
+                    <p>LLMs are really just a <a href="https://hai.stanford.edu/news/reflections-foundation-models">proper
                             subset</a> of FMs</p>
                     <figure>
                         <img src="images/fm_venn.png" width="70%" />
@@ -811,7 +806,7 @@
                 </section>
 
                 <section>
-                    <h4>If the input is text, we call it a <code>Prompt</code></h4>
+                    <h4>If the input is text-based, we call it a <code>Prompt</code></h4>
                     <figure>
                         <img src="images/prompt_engineering.png" width="70%" />
                         <figcaption>
@@ -825,7 +820,6 @@
                 <section>
                     <p># 3</p>
                     <h4>GenAI applies to <strong>many use cases</strong></h4>
-
                 </section>
 
                 <section>
@@ -843,7 +837,17 @@
 
                 <section>
                     <h4>GenAI is rapidly transforming AI</h4>
-                    <img src="https://media.tenor.com/2B3a8aPNwo8AAAAd/borboleta.gif" width="30%" />
+                    <!--img src="https://media.tenor.com/2B3a8aPNwo8AAAAd/borboleta.gif" width="30%" /-->
+                    <figure>
+                        <video controls muted width="20%">
+                            <source src="images/human_stable_evolution.mp4" type="video/mp4">
+                        </video>
+                        <figcaption>
+                            <small><b>Source:</b>
+                                <a href="https://www.reddit.com/r/Damnthatsinteresting/comments/xzwxex/human_evolution_generated_by_ai_stable_diffusion/">Reddit</a>
+                            </small>
+                        </figcaption>
+                    </figure>
                 </section>
 
                 <section>
@@ -929,8 +933,8 @@
                         <img src="https://www.sequoiacap.com/wp-content/uploads/sites/6/2022/09/sonya_cute_robots_singing_music_fantasy_cityscape_with_flowers__508554ad-db40-421d-87b6-4a188604f226.png"
                             width="20%" />
                     </figure>
-                    <p><strong>“Every industry that requires <br>humans to create original work (…) <br>is up for
-                            <strong>reinvention</strong>.”</strong></p>
+                    <p><strong>"Every industry that requires <br>humans to create original work (…) <br>is up for
+                            <strong>reinvention</strong>."</strong></p>
                     <small>
                         ― Sequoia Capital, <a
                             href="https://www.sequoiacap.com/article/generative-ai-a-creative-new-world/">Generative AI:
@@ -939,14 +943,13 @@
                 </section>
 
                 <section>
-                    <h4>But there are “some” challenges…</h4>
-
+                    <h4>But there are "some" challenges…</h4>
                 </section>
 
                 <section>
                     <h4>Hallucinations 🍄</h4>
                     <figure>
-                        <img src="images/hallucination.png" width="50%" />
+                        <img src="images/hallucination.png" width="40%" />
                         <figcaption>
                             <small><b>Source:</b>
                                 <a
@@ -958,9 +961,9 @@
 
                 <section>
                     <h4>Example: Backwards Epigenetic Inheritance</h4>
-                    <p>ChatGPT just invented a <br> <em>causally impossible</em> scientific theory</p>
+                    <p>A <em>causally impossible</em> scientific theory <br>just a prompt away</p>
                     <figure>
-                        <img src="images/chatgpt_on_bei.jpg" width="40%" />
+                        <img src="images/chatgpt_on_bei.jpg" width="30%" />
                         <figcaption>
                             <small><b>Source:</b> Extracted from
                                 <a
@@ -972,8 +975,8 @@
                 </section>
 
                 <section>
-                    <h4>“(…) they used to <strong>lie</strong> and say terrible things. Now they just lie and that’s
-                        interesting enough”</h4>
+                    <h4>"(…) they used to <strong>lie</strong> and say terrible things. <br>Now they just lie and that's
+                        interesting enough"</h4>
                     <small>
                         ― Gary Marcus
                     </small>
@@ -984,7 +987,6 @@
 
                 <section>
                     <h4>Actually…</h4>
-
                 </section>
 
                 <section>
@@ -999,12 +1001,11 @@
 
                 <section>
                     <h4>def. <code>Bullshit</code></h4>
-                    <p>Any statement produced without <br> particular concern of truth</p>
-
+                    <p>Any statement produced without <br> particular concern for reality and truth</p>
                 </section>
 
                 <section>
-                    <h4>“Bullshit is a greater enemy of truth than lies are.”</h4>
+                    <h4>"Bullshit is a greater enemy of truth than lies are."</h4>
                     <small>
                         ― Harry Frankfurt, <a
                             href="https://press.princeton.edu/books/hardcover/9780691122946/on-bullshit">On Bullshit</a>
@@ -1019,7 +1020,7 @@
                 <section>
                     <h4>Security 🛡️</h4>
                     <figure>
-                        <img src="images/llm_indirect_prompt_injection.png" width="50%" />
+                        <img src="images/llm_indirect_prompt_injection.png" width="40%" />
                         <figcaption>
                             <small><b>Source:</b>
                                 <a href="https://arxiv.org/abs/2302.12173">Greshake <em>et al.</em> (2023)</a>
@@ -1030,13 +1031,15 @@
 
                 <section>
                     <h4>Training LLMs on <em>untrusted</em> data <br> has become the norm rather than the exception</h4>
-
+                    <figure>
+                        <img src="images/trustworthy.gif" width="20%" />
+                    </figure>
                 </section>
 
                 <section>
                     <h4>According to <a href="https://arxiv.org/abs/2305.00944v1">Wan <em>et al.</em> (2023)</a>,
-                        launching a successful data poisoning attack during instruction tuning takes only a few hundred
-                        ‘poisoned apples’ 🍎☠️🤢</h4>
+                        launching a successful data poisoning attack during instruction tuning </h4>
+                    <p>takes only a few hundred 'poisoned apples' 🍎☠️🤢</p>
                     <figure>
                         <img src="images/poisoning_llms.png" width="50%" />
                         <figcaption>
@@ -1064,7 +1067,7 @@
                 <section>
                     <h4>Sustainability 🌱</h4>
                     <figure>
-                        <img src="images/llm_environmental_impact.jpg" width="50%" />
+                        <img src="images/llm_environmental_impact.jpg" width="40%" />
                         <figcaption>
                             <small><b>Source:</b>
                                 <a href="https://pubs.acs.org/doi/10.1021/acs.est.3c01106">Rilling <em>et al.</em>
@@ -1080,7 +1083,7 @@
                 </section>
 
                 <section>
-                    <h4>March 3rd 2023: LlaMALeaks</h4>
+                    <h4>March 3rd 2023: LlaMALeaks 🤫</h4>
                     <figure>
                         <img src="images/llama_leaked.png" width="80%" />
                         <figcaption>
@@ -1129,7 +1132,7 @@
                 </section>
 
                 <section>
-                    <h4><code>text-davinci-003 &gt; LLaMA 7B &gt; Alpaca 7B</code></h4>
+                    <h4>Training recipe</h4>
                     <figure>
                         <img src="images/alpaca_main.jpg" width="80%" />
                         <figcaption>
@@ -1155,7 +1158,7 @@
                 <section>
                     <h4>March 19th 2023: LMSYS Org releases Vicuna</h4>
                     <figure>
-                        <img src="images/lmsys_vicuna_comparison.png" width="80%" />
+                        <img src="images/lmsys_vicuna_comparison.png" width="60%" />
                         <figcaption>
                             <small><b>Source:</b>
                                 <a href="https://lmsys.org/blog/2023-03-30-vicuna/">LMSYS Org</a>
@@ -1169,7 +1172,7 @@
                             href="https://www.semianalysis.com/p/google-we-have-no-moat-and-neither">Moats, moats,
                             moats</a></h4>
                     <figure>
-                        <img src="images/moat.jpg" width="60%" />
+                        <img src="images/moat.jpg" width="50%" />
                         <figcaption>
                             <small><b>Source:</b> Adapted from
                                 <a href="https://www.webdonuts.com/2015/07/lazy/">WebDonuts</a>
@@ -1180,9 +1183,9 @@
 
                 <section>
                     <p>🐧</p>
-                    <h4>“I often compare open source to science. Science took this whole notion of developing ideas in
-                        the open and improving on other people’s ideas. It made science what it is today and made the
-                        incredible advances that we have had possible.”</h4>
+                    <h4>"I often compare open source to science. Science took this whole notion of developing ideas in
+                        the open and improving on other people's ideas. It made science what it is today and made the
+                        incredible advances that we have had possible."</h4>
                     <small>
                         ― Linus Torvalds
                     </small>
@@ -1193,12 +1196,9 @@
                     <img src="images/stay_tuned.gif" />
                 </section>
 
-
             </section>
 
-
-
-
+            <!-- Building GenAI on AWS -->
 
             <section>
                 <section>
@@ -1221,13 +1221,12 @@
                 </section>
 
                 <section>
-                    <p>Let’s start by looking at the bottom layer…</p>
+                    <p>Let's start by looking at the bottom layer…</p>
                     <h4>ML Frameworks &amp; Infrastructure</h4>
-
                 </section>
 
                 <section>
-                    <h4>There’s some evidence that large-scale models <br> lead to better results*</h4>
+                    <h4>There's some evidence that large-scale models <br> lead to better results*</h4>
                     <figure>
                         <img src="images/nn_scaling_laws.png" width="70%" />
                         <figcaption>
@@ -1238,7 +1237,6 @@
                     </figure>
                     <p class="fragment fade-in"><small>* Read the <a
                                 href="https://www.arxiv-vanity.com/papers/2001.08361/#A3">fine print</a>!</small></p>
-
                 </section>
 
                 <section>
@@ -1267,7 +1265,6 @@
 
                 <section>
                     <h4>How do we train a large model like, say…</h4>
-
                 </section>
 
                 <section>
@@ -1276,40 +1273,26 @@
                 </section>
 
                 <section>
-                    <h4>Let’s check out <a href="https://hpc.stability.ai/">Stability’s HPC cluster</a> 🦮</h4>
+                    <h4>Let's check out <a href="https://hpc.stability.ai/">Stability's HPC cluster</a> 🦮</h4>
                     <p>💻 <a
                             href="http://github.com/Stability-AI/stability-hpc">github.com/Stability-AI/stability-hpc</a>
                     </p>
-
                 </section>
 
                 <section>
                     <h4>Training large-scale models comes <br> with a lot of challenges</h4>
-                    <ul>
-                        <li>
-                            <p>Hardware 💻</p>
-                        </li>
-                        <li>
-                            <p>Health Checks 👨‍⚕️⚠️</p>
-                        </li>
-                        <li>
-                            <p>Orchestration 🎻🎶</p>
-                        </li>
-                        <li>
-                            <p>Data 💾</p>
-                        </li>
-                        <li>
-                            <p>Scale 📈</p>
-                        </li>
-                        <li>
-                            <p>Cost 💰</p>
-                        </li>
-                    </ul>
-
+                    <small>
+                        <p>Hardware 💻</p>
+                        <p>Health Checks 👨‍⚕️⚠️</p>
+                        <p>Orchestration 🎻🎶</p>
+                        <p>Data 💾</p>
+                        <p>Scale 📈</p>
+                        <p>Cost 💰</p>
+                    </small>
                 </section>
 
                 <section>
-                    <h4>HPC ML cluster <br> for distributed learning</h4>
+                    <h4>HPC ML cluster for distributed training</h4>
                     <figure>
                         <img src="images/hpc_ml_cluster.png" width="80%" />
                         <figcaption>
@@ -1323,7 +1306,7 @@
                 <section>
                     <h4><a href="https://github.com/aws-samples/1click-hpc">1-click HPC</a></h4>
                     <figure>
-                        <img src="images/1clickhpc_architecture.png" width="70%" />
+                        <img src="images/1clickhpc_architecture.png" width="60%" />
                         <figcaption>
                             <small><b>Source:</b>
                                 <a href="https://github.com/aws-samples/1click-hpc">GitHub</a>
@@ -1336,7 +1319,7 @@
                     <h4>Compute: <a href="https://pages.awscloud.com/amazon-ec2-p4d.html">EC2 UltraClusters</a></h4>
                     <figure>
                         <img src="https://d1.awsstatic.com/diagrams/EC2_UltraClusters_HIW.268b99f0bdc37a8696d89db459a2ea71b75e390d.jpg"
-                            width="70%" />
+                            width="60%" />
                         <figcaption>
                             <small><b>Source:</b>
                                 <a href="https://aws.amazon.com/ec2/instance-types/p4/">AWS</a>
@@ -1357,7 +1340,7 @@
                 <section>
                     <h4>Current NVIDIA A100 GPU Count</h4>
                     <figure>
-                        <img src="images/stateofai_a100_count.png" width="90%" />
+                        <img src="images/stateofai_a100_count.png" width="60%" />
                         <figcaption>
                             <small><b>Source:</b>
                                 <a href="https://www.stateof.ai/">State of AI Report 2022</a>
@@ -1371,7 +1354,7 @@
                             Instances</a></h4>
                     <figure>
                         <img src="https://s4.itho.me/sites/default/files/images/__2021-12-AWS-ML%20instance-Trn1-1.jpg"
-                            width="70%" />
+                            width="60%" />
                         <figcaption>
                             <small><b>Source:</b>
                                 <a href="https://www.ithome.com.tw/news/148435">iThome</a>
@@ -1384,7 +1367,7 @@
                     <h4>Neuron on <code>Trn1</code> Instances</h4>
                     <figure>
                         <img src="https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2022/08/20/trn1-neuron-top.png"
-                            width="90%" />
+                            width="70%" />
                         <figcaption>
                             <small><b>Source:</b>
                                 <a
@@ -1397,7 +1380,7 @@
 
                 <section>
                     <h4>Annapurna Labs</h4>
-                    <p>The ‘Secret Sauce’ behind AWS’s success</p>
+                    <p>The 'Secret Sauce' behind AWS's success</p>
                     <figure>
                         <img src="https://assets.amazon.science/dims4/default/668f812/2147483647/strip/true/crop/1440x810+0+0/resize/1440x810!/format/webp/quality/90/?url=http%3A%2F%2Famazon-topics-brightspot.s3.amazonaws.com%2Fscience%2F36%2F74%2F6b4c27ed484ca6ef9467ff7c6df7%2Fnafea-bshara-lead-image-alternative072922.png"
                             width="50%" />
@@ -1450,6 +1433,7 @@
 
                 <section>
                     <h4>How to create a <code>pcluster</code></h4>
+                    <small><code><a href="https://github.com/aws/aws-parallelcluster">pcluster</a> create-cluster -f config.yaml ...</code></small>
                     <figure>
                         <img src="images/pc_create_cluster.png" width="70%" />
                         <figcaption>
@@ -1462,7 +1446,7 @@
 
                 <section>
                     <h3>Is there a better way?</h3>
-                    <img src="images/better_way.gif" />
+                    <img src="images/better_way.gif" width="30%"/>
                 </section>
 
                 <section>
@@ -1487,11 +1471,12 @@
                             <li>
                                 <p><strong>Prepare Data</strong></p>
                                 <ul>
-                                    <li>Download LAION-5B Parquet files with <a href="">SageMaker Processing Jobs</a>
+                                    <li>Download <a href="https://laion.ai/blog/laion-5b/"><code>LAION-5B</code></a> Parquet files with <a href="">SageMaker Processing Jobs</a>
                                     </li>
-                                    <li>Download LAION-5B images and text pairs</li>
-                                    <li>Create FSx for Lustre volume from S3 path</li>
-                                    <li>Build JSON Lines index</li>
+                                    <li>Download <code>LAION-5B</code> images and text pairs</li>
+                                    <li>Create <a href="https://aws.amazon.com/fsx/lustre/">FSx for Lustre</a> volume from S3 path</li>
+                                    <li>Build <a href="JSON Lines index</li>
+                                    <li>Build <a href="https://jsonlines.org/">JSON Lines</a> index</li>
                                 </ul>
                             </li>
                             <li>
@@ -1505,7 +1490,7 @@
                             <li>
                                 <p><strong>Evaluate Model</strong></p>
                                 <ul>
-                                    <li>1 epoch on 50M image/text pairs with ~200 GPUs? 15 mins!</li>
+                                    <li>1 epoch on 50M image/text pairs with ~200 GPUs? <strong>15 mins!</strong></li>
                                 </ul>
                             </li>
                             <li>
@@ -1586,7 +1571,6 @@
                             <p>Fully integrated with Amazon SageMaker</p>
                         </li>
                     </ul>
-
                 </section>
 
                 <section>
@@ -1600,7 +1584,6 @@
                             </small>
                         </figcaption>
                     </figure>
-
                 </section>
 
                 <section>
@@ -1620,20 +1603,19 @@
 
                 <section>
                     <h4><a href="https://aws.amazon.com/bedrock/">Amazon Bedrock</a></h4>
-                    <p>API-level access to Foundation models</p>
+                    <p>API-level access to FMs</p>
                     <figure>
-                        <img src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2023/04/13/building-generative-ai-on-aws.png"
-                            width="50%" />
+                        <img src="images/ai_chip_hero.jpg"
+                            width="30%" />
                         <figcaption>
                             <small><b>Source:</b>
                                 <a
-                                    href="https://aws.amazon.com/blogs/machine-learning/announcing-new-tools-for-building-with-generative-ai-on-aws/">AWS</a>
+                                    href="https://www.aboutamazon.com/news/aws/aws-amazon-bedrock-generative-ai-service">Amazon</a>
                             </small>
                         </figcaption>
                     </figure>
-                    <p>For more information, check out <a
+                    <p>For more information, visit <br><a
                             href="https://aws.amazon.com/bedrock">aws.amazon.com/bedrock</a></p>
-
                 </section>
 
                 <section>
@@ -1658,6 +1640,24 @@
                             </small>
                         </figcaption>
                     </figure>
+                </section>
+
+                <section>
+                    <h4>You are <u>always</u> in control of your data 🎛️</h4>
+                    <figure>
+                        <img src="images/bedrock_security_controls.png" width="70%" />
+                        <figcaption>
+                            <small><b>Source:</b> Adapted from
+                                <a href="https://www.youtube.com/watch?v=5EDOTtYmkmI">AWS re:Inforce 2023</a>
+                            </small>
+                        </figcaption>
+                    </figure>
+                    <!--ul>
+                        <li><b>Privacy:</b> data is not used to improve base models</li>
+                        <li><b>Residency:</b> stays in the Region where it was created</li>
+                        <li><b>Isolation:</b> data is isolated per customer</li>
+                        <li><b>Encryption:</b> always encrypted in transit and at rest</li>
+                    </ul-->
                 </section>
 
                 <section>
@@ -1743,9 +1743,9 @@
                 </section>
 
                 <section>
-                    <h4>“(…) participants who used CodeWhisperer were <strong>27% more likely to complete tasks
-                            successfully</strong> and did so an average of <strong>57% faster</strong> than those who
-                        didn’t use CodeWhisperer.”</h4>
+                    <h4>"(…) participants who used CodeWhisperer were <strong style="background-color: yellow;">27% more likely</strong> to complete tasks
+                            successfully and did so an average of <strong style="background-color: green;">57% faster</strong> than those who
+                        didn't use CodeWhisperer."</h4>
                     <small>
                         ― AWS News Blog
                     </small>
@@ -1760,22 +1760,20 @@
 
                 <section>
                     <h3>Ready to learn how?</h3>
-
+                    <figure>
+                        <img src="images/ready.gif" width="30%" />
+                    </figure>
                 </section>
-
 
             </section>
 
-
-
-
+            <!-- GenAI in Practice -->
 
             <section>
                 <section>
                     <h2>GenAI in Practice</h2>
                     <p>Use Cases, Patterns &amp; Solutions</p>
                     <p>🛠️</p>
-
                 </section>
 
                 <section>
@@ -1788,7 +1786,7 @@
                 <section>
                     <h4>GenAI Landscape</h4>
                     <figure>
-                        <img src="images/genai_landscape.png" width="70%" />
+                        <img src="images/genai_landscape.png" width="90%" />
                         <figcaption>
                             <small><b>Source:</b>
                                 <a
@@ -1799,12 +1797,10 @@
                 </section>
 
                 <section>
-                    <h4>That last slide will be completely…</h4>
+                    <h4>By the time you read this, <br>the last slide will be completely…</h4>
                     <figure>
-                        <img src="images/outdated.gif" width="50%" />
+                        <img src="images/outdated.gif" width="30%" />
                     </figure>
-                    <p>by the time you read this</p>
-
                 </section>
 
                 <section>
@@ -1844,7 +1840,7 @@
                     <h4><a href="https://blog.streamlit.io/langchain-tutorial-4-build-an-ask-the-doc-app/">Document
                             Generation with Facts</a></h4>
                     <figure>
-                        <img src="images/streamlit_ask_the_doc.gif" width="70%" />
+                        <img src="images/streamlit_ask_the_doc.gif" width="50%" />
                         <figcaption>
                             <small><b>Source:</b>
                                 <a
@@ -1856,7 +1852,9 @@
 
                 <section>
                     <h4>We can build all of these on AWS</h4>
-
+                    <figure>
+                        <img src="images/build.gif" width="30%" />
+                    </figure>
                 </section>
 
                 <section>
@@ -1910,7 +1908,7 @@
                             href="https://aws.amazon.com/blogs/machine-learning/introducing-an-image-to-speech-generative-ai-application-using-amazon-sagemaker-and-hugging-face/">Image-to-Speech
                             app using <br> Amazon SageMaker and 🤗</a></h4>
                     <figure>
-                        <img src="images/describe4me_architecture.png" width="80%" />
+                        <img src="images/describe4me_architecture.png" width="70%" />
                         <figcaption>
                             <small><b>Source:</b>
                                 <a
@@ -1952,7 +1950,6 @@
                 <section>
                     <h4>Vector databases are useful for storing embeddings</h4>
                     <p>since they treat vectors as first class citizens</p>
-
                 </section>
 
                 <section>
@@ -1972,9 +1969,8 @@
                 </section>
 
                 <section>
-                    <h3>What options do we have for <br> <a
+                    <h3>How can we have a <br> <a
                             href="https://aws.amazon.com/what-is/vector-databases/">vector database on AWS</a>?</h3>
-
                 </section>
 
                 <section>
@@ -1999,7 +1995,6 @@
                   4 | [8,6,9]    |   9.9498743710662
         */
         </code></pre>
-
                 </section>
 
                 <section>
@@ -2008,7 +2003,7 @@
                             a similarity search for enhancing <br> product catalog search in an online retail store</a>
                     </h4>
                     <figure>
-                        <img src="images/rds_pgvector_architecture.png" width="70%" />
+                        <img src="images/rds_pgvector_architecture.png" width="60%" />
                         <figcaption>
                             <small><b>Source:</b>
                                 <a
@@ -2053,12 +2048,11 @@
             faiss.write_index(self.index, f&quot;{FAISS_DIR}/{self.content_group}/{self.content_group}_faiss_index.bin&quot;)
             return (embeddings32, range(index_start_id, index_end_id))
         </code></pre>
-
                 </section>
 
                 <section>
                     <h4>#4 <a
-                            href="https://medium.com/swlh/add-similarity-search-to-dynamodb-with-faiss-c68eb6a48b08">AWS Marketplace</a></h4>
+                            href="https://medium.com/swlh/add-similarity-search-to-dynamodb-with-faiss-c68eb6a48b08">AWS Marketplace</a> solution</h4>
                     <figure>
                         <img src="images/aws_marketplace_vector_databases.png" width="70%"/>
                     </figure>
@@ -2066,7 +2060,9 @@
 
                 <section>
                     <h3>What if I want to explore <br> more use cases?</h3>
-
+                    <figure>
+                        <img src="images/explore.gif" width="30%" />
+                    </figure>
                 </section>
 
                 <section>
@@ -2077,20 +2073,20 @@
                 </section>
 
                 <section>
-                    <h4>Hello World: Meet Generative AI</h4>
-                    <p>Werner Vogels and Swami Sivasubramanian sit down to discuss GenAI, why it’s not hype, and how AWS
-                        is democratizing access to LLMs and FMs.</p>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/dBzCGcwYCJo"
+                    <h4><code>Hello World</code>: Meet Generative AI</h4>
+                    <p>Werner Vogels and Swami Sivasubramanian <br>sit down to discuss GenAI and why it's not a hype</p>
+                    <figure>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/dBzCGcwYCJo"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
+                        allowfullscreen style="margin-top: 10;"></iframe>
+                    </figure>
                 </section>
 
                 <section>
                     <h4><a href="https://www.deeplearning.ai/courses/generative-ai-with-llms/">Hands-On GenAI with LLMs
                             Course</a></h4>
-                    <p>Learn the fundamentals of how GenAI works and <br> how to deploy it in real-world applications
-                    </p>
+                    <p>Learn the fundamentals of how GenAI works and <br> how to deploy it in real-world applications</p>
                     <img src="images/genai_with_llms_course.png" width="70%" />
                 </section>
 
@@ -2142,6 +2138,7 @@
                         </ul>
                     </small>
                 </section>
+
                 <section>
                     <h4>Courses 👩‍🏫</h4>
                     <small>
@@ -2172,6 +2169,7 @@
                         </ul>
                     </small>
                 </section>
+
                 <section>
                     <h4>Courses 👾</h4>
                     <small>
@@ -2188,9 +2186,11 @@
                         </ul>
                     </small>
                 </section>
+
                 <section>
-                    <h4>Meta 🪝</h4>
+                    <h4>Meta ♾️</h4>
                     <small>
+                        <p><strong>Disclaimer:</strong> I take no responsibility for the content available through these links</p>
                         <ul>
                             <li><a href="https://sebastianraschka.com/blog/2023/llm-reading-list.html">Understanding LLMs - A Transformative Reading List</a> 
                                 by Sebastian Raschka</li>
