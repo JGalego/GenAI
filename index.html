@@ -2789,7 +2789,7 @@ if __name__ == '__main__':
                 <section>
                     <h4>#3 <a
                             href="https://medium.com/swlh/add-similarity-search-to-dynamodb-with-faiss-c68eb6a48b08">DynamoDB
-                            + FAISS</a></h4>
+                            + Faiss</a></h4>
                     <pre><code class="language-python">def save_faiss_model(self, text_list, id_list):
     # Convert abstracts to vectors
     embeddings = model.encode(text_list, show_progress_bar=False)
@@ -2805,6 +2805,14 @@ if __name__ == '__main__':
     faiss.write_index(self.index, f&quot;{FAISS_DIR}/{self.content_group}/{self.content_group}_faiss_index.bin&quot;)
     return (embeddings32, range(index_start_id, index_end_id))
         </code></pre>
+                </section>
+
+                <section>
+                    <h4><a href="https://weaviate.io/blog/vector-library-vs-vector-database">Vector Library vs. Vector Database</a></h4>
+                    <p>Vector libraries are used to perform similarity search.</p>
+                    <p><b>Examples:</b> <a href="https://github.com/facebookresearch/faiss">Facebook FAISS</a>, <a href="https://github.com/spotify/annoy">Spotify Annoy</a>, <a href="https://github.com/google-research/google-research/tree/master/scann">Google ScaNN</a>, <a href="https://github.com/nmslib/nmslib">NMSLIB</a>, <a href="https://github.com/nmslib/hnswlib">Hnswlib</a></p>
+                    <p>Vector databases are used to store and update data.</p>
+                    <p><b>Examples:</b> <a href="https://www.pinecone.io/">Pinecone</a>, <a href="https://weaviate.io/">Weaviate</a>, <a href="https://milvus.io/">Milvus</a></p>
                 </section>
 
                 <section>
